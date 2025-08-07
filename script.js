@@ -39,3 +39,14 @@ data.addEventListener('keydown', (e) => {
     addItem();
   }
 });
+// Delete last item on Delete key press
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Delete') {
+    const allItems = contentItem.querySelectorAll('li');
+    const lastItem = allItems[0]; // Since you're using prepend, the newest is first
+    if (lastItem) {
+      lastItem.remove();
+    }
+  }
+});
+
